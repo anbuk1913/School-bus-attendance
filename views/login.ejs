@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>School Bus Attendance - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .login-box input {
+      display: block;
+      width: 80%;
+      margin: 10px auto;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    p#error {
+      color: red;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>School Bus Attendance System</h2>
+    <div class="login-box">
+      <!-- ✅ Added form tag with POST method and /login action -->
+      <form method="POST" action="/login">
+        <input type="text" name="username" placeholder="Enter username" required />
+        <input type="password" name="password" placeholder="Enter password" required />
+        <button type="submit">Login</button>
+      </form>
+
+      <!-- ✅ Display backend error message if present -->
+      <% if (typeof err !== 'undefined' && err) { %>
+        <p id="error"><%= err %></p>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>
